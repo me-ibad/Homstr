@@ -529,7 +529,7 @@
 }
   .fa-star-o {
   font-size: 17px;
-  color: #333333;
+  color: black;
 }
 
 .rating {
@@ -539,7 +539,7 @@
 }
 
  .pull-left {
-  float: none
+  float: none;
 }
 
  /* .pull-right {

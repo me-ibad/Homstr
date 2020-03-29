@@ -116,6 +116,20 @@ function IndexNavbar() {
                         </NavLink>
                       </NavItem>
                      
+
+                      <NavItem>
+                      
+                      <NavLink
+                        href="#pablo"
+                        onClick={e => e.preventDefault()}
+                      >
+                        Cart
+                        <i
+                          aria-hidden={true}
+                          className="now-ui-icons shopping_bag-16"
+                        ></i>
+                      </NavLink>
+                    </NavItem>
                    
                       <UncontrolledDropdown nav>
                         <DropdownToggle

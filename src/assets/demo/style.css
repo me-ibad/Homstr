@@ -971,5 +971,114 @@
     }
   }
   
-  /*# sourceMappingURL=Searchs_130.css.map */
+  /*# Card css */
   
+
+
+  .card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-top:30px;
+    margin-left: 20px;
+    margin-bottom:10px;
+    background-color:#FFF;
+    width: 50%;
+    padding: 1rem;
+  }
+  
+  .card:hover {
+    -webkit-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+  }
+  .card > .card-inner {
+    padding:1px;
+  }
+  .card .header h2, h3 {
+    margin-bottom: 0px;
+    margin-top:0px;
+  }
+  .card .header {
+    margin-bottom:5px;
+  }
+  .card img{
+    width:100%;
+  }
+  .rating1{
+    color:yellow;
+  }
+  .fa-star-o{
+    color: black;
+  }
+  h3{
+    margin-left: 100px;
+  }
+  .btn-link :hover{
+   color: #000;
+
+  }
+
+  .heading {
+    font-weight: 700;
+    color: #5d4267;
+  }
+  .card.colorful-card .testimonial-card .card-up {
+    height: 95px;
+  }
+  .card.colorful-card .testimonial-card .avatar {
+    border: 3px solid #fff !important;
+  }
+  .card.booking-card {
+    background-color: #c7f2e3;
+  }
+  .card.booking-card .fa {
+    color: #f7aa00;
+  }
+  .card.booking-card .card-body .card-text {
+    color: #db2d43;
+  }
+  .card.card.booking-card .chip {
+    background-color: #87e5da;
+  }
+  .card.booking-card .card-body hr {
+    border-top: 1px solid #f7aa00;
+  }
+  .mimosa {
+    background-color: #F0C05A;
+  }
+  .fuchsia-rose-text {
+    color: #db0075;
+  }
+  .aqua-sky-text {
+    color: #5cc6c3;
+  }
+  .mimosa-text {
+    color: #F0C05A;
+  }
+  .list-inline-item .fas, .list-inline-item .far {
+    font-size: .8rem;
+  }
+  .chili-pepper-text {
+    color: #9B1B30;
+  }
+  .collapse-content .fa.fa-heart:hover {
+    color: #f44336 !important;
+  }
+  .collapse-content .fa.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  }
+  .card-wrapper.card-action {
+    min-height: 400px;
+  }
+
+
+  .pointer {cursor: pointer;
+  
+  }
+  .butt{
+     position: relative; 
+    margin-left: 10000px;
+    color: #000;
+    margin-bottom: 1000px;
+  }

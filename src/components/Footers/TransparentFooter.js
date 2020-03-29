@@ -12,15 +12,15 @@ function TransparentFooter() {
           <ul>
             <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-transparent-footer"
+                href="#"
                 target="_blank"
               >
-                Creative Tim
+                Contact Us
               </a>
             </li>
             <li>
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-transparent-footer"
+                href="#"
                 target="_blank"
               >
                 About Us
@@ -28,7 +28,7 @@ function TransparentFooter() {
             </li>
             <li>
               <a
-                href="http://blog.creative-tim.com?ref=nukr-transparent-footer"
+                href="#"
                 target="_blank"
               >
                 Blog

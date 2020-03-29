@@ -62,7 +62,7 @@ function LandingPageHeader() {
             <button className="btn-search" type="button">SEARCH</button>
           </div>
         </div>
-        <span className="info">ex. Game, Music, Video, Photography</span>
+        <span className="info">ex. Grocery, Medicine, Fruit & Vegetable</span>
       </form>
     </div>
             
