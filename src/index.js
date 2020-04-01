@@ -9,7 +9,7 @@ import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 import "assets/demo/style.css";
  import "assets/css/now-ui-kit.css";
-
+ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // pages for this kit
 import Index from "views/Index.js";

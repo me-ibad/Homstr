@@ -985,6 +985,7 @@
     background-color:#FFF;
     width: 50%;
     padding: 1rem;
+    height: 50;
   }
   
   .card:hover {
@@ -1076,9 +1077,23 @@
   .pointer {cursor: pointer;
   
   }
+
+.pointer :hover {
+background-color: lightgray;
+}
+
   .butt{
      position: relative; 
     margin-left: 10000px;
     color: #000;
     margin-bottom: 1000px;
+    
   }
+
+  /* profile  */
+
+ 
+  
+.actives{
+  background-color: blue;
+}

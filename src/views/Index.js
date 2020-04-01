@@ -26,6 +26,9 @@ import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
 import LandingPage from "views/examples/LandingPage.js";
 import Search from "views/examples/Search.js";
+
+import Profile from "views/examples/Profile.js";
+
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -40,7 +43,7 @@ function Index() {
   });
   return (
     <>
-      <Search />
+      <Profile />
       {/* <div className="wrapper">
         <IndexHeader />
         <div className="main">

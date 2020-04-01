@@ -40,12 +40,12 @@ export class Search extends Component {
     <div class="card-body p-3">
 
       
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 ">
+      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
         <a>
         Product name
         </a></h5>
         
-      <p className="aqua-sky-text mb-0 pointer">Shop Name</p>
+      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
       <ul className="list-unstyled list-inline my-2">
         <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
         <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
@@ -77,9 +77,6 @@ export class Search extends Component {
 
 
 </Col>
-
-
-
 
 
 </Row>
