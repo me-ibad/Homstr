@@ -9,7 +9,7 @@ import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 import "assets/demo/style.css";
  import "assets/css/now-ui-kit.css";
- import 'bootstrap/dist/css/bootstrap.min.css';
+   import 'bootstrap/dist/css/bootstrap.min.css';
 
 // pages for this kit
 import Index from "views/Index.js";
@@ -17,6 +17,10 @@ import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
+import Product from "views/examples/Product.js";
+
+
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,7 +28,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/index" 
         render={props => <Index {...props} />} />
-        <Route
+        {/* <Route
           path="/nucleo-icons"
           render={props => <NucleoIcons {...props} />}
         />
@@ -36,11 +40,12 @@ ReactDOM.render(
           path="/profile-page"
           render={props => <ProfilePage {...props} />}
         />
-        <Route path="/login-page" render={props => <LoginPage {...props} />} />
-        <Redirect to="/index" />
-        <Redirect from="/" to="/index" />
+        <Route path="/login-page" render={props => <LoginPage {...props} />} /> */}
+        {/* <Redirect to="/index" />
+        <Redirect from="/" to="/index" /> */}
       </Switch>
     </Switch>
+    
   </BrowserRouter>,
   document.getElementById("root")
 );

@@ -28,7 +28,8 @@ import LandingPage from "views/examples/LandingPage.js";
 import Search from "views/examples/Search.js";
 
 import Profile from "views/examples/Profile.js";
-
+import Product from "views/examples/Product.js";
+import Cart from "views/examples/Cart.js";
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -43,7 +44,14 @@ function Index() {
   });
   return (
     <>
-      <Profile />
+    
+      <Cart />
+
+
+
+
+
+
       {/* <div className="wrapper">
         <IndexHeader />
         <div className="main">
