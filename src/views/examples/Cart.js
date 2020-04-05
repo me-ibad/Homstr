@@ -1,7 +1,5 @@
 import React from 'react'
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/TransparentFooter.js";
+
 import {
     Button,
     Label,
@@ -18,8 +16,7 @@ import {
 function Cart() {
     return (
         <div>
-<ExamplesNavbar />
-<LandingPageHeader />
+
         <div className="bodycart">
             
 
@@ -169,7 +166,7 @@ function Cart() {
       </div>
 
         </div>
-        <DefaultFooter />
+        
     
         </div>
     )

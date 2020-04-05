@@ -148,6 +148,9 @@
   small {
     font-size: 80%;
   }
+  .stext{
+    color: white;
+  }
   
   /**
    * Prevent `sub` and `sup` elements from affecting the line height in
@@ -975,7 +978,7 @@
   
 
 
-  .card {
+ .card {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
@@ -993,6 +996,30 @@
     -moz-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
     box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
   }
+
+  .card-landing{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-top:30px;
+     /* margin-left: 50px; */
+    margin-bottom:10px;
+    background-color:#FFF;
+   
+    padding: .5rem;
+    
+  }
+  .wrapper{
+    margin-left: 100px;
+  }
+  .card-landing:hover {
+    -webkit-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
+  }
+
+
+
   .card > .card-inner {
     padding:1px;
   }

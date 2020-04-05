@@ -1,7 +1,6 @@
 import React from 'react'
-import DefaultFooter from "components/Footers/TransparentFooter.js";
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+
+import Card from "components/Card/pcard.js";
 import {
     Button,
     Input,
@@ -15,12 +14,14 @@ import {
     PaginationItem,
     PaginationLink
   } from "reactstrap";
+
+  
 function Profile() {
     return (
         <div>
-            <ExamplesNavbar />
+            
             <div>
-            <LandingPageHeader />
+            
         {/* Page Content */}
         <div className="container">
           <div className="row">
@@ -69,235 +70,25 @@ function Profile() {
               <div className="row">
                 <div className="col-lg-4 col-md-6 mb-4">
                   
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+<Card/>
 
 
-                  
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
+                <Card/>
+                </div>
 
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+                <div className="col-lg-4 col-md-6 mb-4">
+               <Card/>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">1100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+                <Card/>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+                <Card/>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 mb-4">
-                <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-        <a>
-        Product name
-        </a></h5>
-        
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info">
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+                <Card/>
                 </div>
               </div>
               {/* /.row */}
@@ -372,7 +163,7 @@ function Profile() {
 </div>
 
 
-      <DefaultFooter />
+    
         </div>
     )
 }

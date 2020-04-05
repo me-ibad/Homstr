@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignUp from "views/index-sections/SignUp.js";
+
 // reactstrap components
 import {
   Button,
@@ -57,7 +58,7 @@ function IndexNavbar() {
             HOMSTR
             
             <NavbarBrand
-              href="#"
+              href="www.encodersoft.codes"
               target="_blank"
               id="navbar-brand"
             >
@@ -105,8 +106,8 @@ function IndexNavbar() {
                       <NavItem>
                       
                         <NavLink
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          href="/profile"
+                          onClick={"/profile"}
                         >
                           User
                           <i
@@ -120,8 +121,8 @@ function IndexNavbar() {
                       <NavItem>
                       
                       <NavLink
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        href="/cart"
+                        onClick={"cart"}
                       >
                         Cart
                         <i
@@ -139,7 +140,7 @@ function IndexNavbar() {
                           nav
                           onClick={e => e.preventDefault()}
                         >
-                          Setting
+                          Options
                           <i
                             aria-hidden={true}
                             className="now-ui-icons ui-1_settings-gear-63"
@@ -147,39 +148,39 @@ function IndexNavbar() {
                         </DropdownToggle>
                         <DropdownMenu right>
                           <DropdownItem header tag="a">
-                            Dropdown header
+                            More options Here
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            Action
+                            Your Shop
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            Another action
+                            History
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            Something else here
-                          </DropdownItem>
-                          <div className="divider"></div>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Separated link
+                            Address
                           </DropdownItem>
                           <div className="divider"></div>
                           <DropdownItem
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            One more separated link
+                            Settings
+                          </DropdownItem>
+                          <div className="divider"></div>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            LogOut
                           </DropdownItem>
                         </DropdownMenu>
                       </UncontrolledDropdown>

@@ -1,7 +1,5 @@
 import React from 'react'
-import DefaultFooter from "components/Footers/TransparentFooter.js";
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+
 import {
     Button,
     Label,
@@ -18,8 +16,7 @@ import {
 function Product() {
     return (
         <div>
-             <ExamplesNavbar />
-             <LandingPageHeader />
+             
 
              <div class="container1">
 		<div class="card1">
@@ -81,7 +78,7 @@ function Product() {
 
 
 
-             <DefaultFooter />
+         
         </div>
     )
 }

@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Container,Input,
   InputGroupAddon,
   InputGroupText,
-  InputGroup,Row,
+  InputGroup,Row,NavLink,
   Col } from "reactstrap";
 
 // core components
@@ -59,7 +59,15 @@ function LandingPageHeader() {
             <input id="search" type="text" placeholder="What are you looking for?" />
           </div>
           <div className="input-field second-wrap">
-            <button className="btn-search" type="button">SEARCH</button>
+            <button className="btn-search" type="button"
+            
+            
+            >
+              <NavLink
+            href="/search"
+            onClick={"search"}
+            ><span class="stext">
+              SEARCH </span></NavLink></button>
           </div>
         </div>
         <span className="info">ex. Grocery, Medicine, Fruit & Vegetable</span>

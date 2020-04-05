@@ -17,8 +17,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
+
 
 function LoginPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
@@ -36,7 +35,7 @@ function LoginPage() {
   });
   return (
     <>
-      <ExamplesNavbar />
+      
       <div className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
@@ -134,7 +133,7 @@ function LoginPage() {
             </Col>
           </Container>
         </div>
-        <TransparentFooter />
+       
       </div>
     </>
   );

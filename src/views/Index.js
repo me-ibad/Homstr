@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BrowserRouter, Route, Switch, Redirect,Link } from "react-router-dom";
 // reactstrap components
 // import {
 // } from "reactstrap";
@@ -26,10 +26,14 @@ import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
 import LandingPage from "views/examples/LandingPage.js";
 import Search from "views/examples/Search.js";
-
+import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 import Profile from "views/examples/Profile.js";
 import Product from "views/examples/Product.js";
 import Cart from "views/examples/Cart.js";
+import Contact from "views/examples/Contact.js";
+
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -43,36 +47,46 @@ function Index() {
     };
   });
   return (
-    <>
+   
     
-      <Cart />
+    <BrowserRouter>
+     <ExamplesNavbar />
+                <LandingPageHeader />
+                <Switch>
+     <Route path="/" exact component={LandingPage}   />
+    <Route path="/Search" component={Search}   />
+<Route path="/profile" component={Profile}   />
+<Route path="/cart" component={Cart}   />
+<Route path="/product" component={Product}   />
+<Route path="/contact" component={Contact}   />
+</Switch>
+<DefaultFooter />
+      </BrowserRouter>
 
 
 
 
-
-
-      {/* <div className="wrapper">
-        <IndexHeader />
-        <div className="main">
-         <Images />
-          <BasicElements /> 
-           <Navbars />
-          <Tabs />
-          <Pagination />
-          <Notifications />
-          <Typography />
-          <Javascript />
-          <Carousel />
-          <NucleoIcons />
-          <CompleteExamples />
-          <SignUp />
-          <Examples /> 
-          <LandingPage  />
-        </div>
-        <DarkFooter />
-      </div> */}
-    </>
+      // {/* <div className="wrapper">
+      //   <IndexHeader />
+      //   <div className="main">
+      //    <Images />
+      //     <BasicElements /> 
+      //      <Navbars />
+      //     <Tabs />
+      //     <Pagination />
+      //     <Notifications />
+      //     <Typography />
+      //     <Javascript />
+      //     <Carousel />
+      //     <NucleoIcons />
+      //     <CompleteExamples />
+      //     <SignUp />
+      //     <Examples /> 
+      //     <LandingPage  />
+      //   </div>
+      //   <DarkFooter />
+      // </div> */}
+  
   );
 }
 

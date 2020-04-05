@@ -12,8 +12,8 @@ function TransparentFooter() {
           <ul>
             <li>
               <a
-                href="#"
-                target="_blank"
+                href="/contact"
+                onClick={"/contact"}
               >
                 Contact Us
               </a>
