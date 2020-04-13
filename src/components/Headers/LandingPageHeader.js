@@ -1,4 +1,5 @@
 import React from "react";
+import "assets/demo/searchbar.css";
 
 // reactstrap components
 import { Button, Container,Input,

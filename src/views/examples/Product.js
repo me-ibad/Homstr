@@ -1,5 +1,7 @@
 import React from 'react'
-
+import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 import {
     Button,
     Label,
@@ -17,7 +19,8 @@ function Product() {
     return (
         <div>
              
-
+<ExamplesNavbar />
+<LandingPageHeader />
              <div class="container1">
 		<div class="card1">
 			<div class="container-fliud">

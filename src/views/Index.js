@@ -26,14 +26,14 @@ import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
 import LandingPage from "views/examples/LandingPage.js";
 import Search from "views/examples/Search.js";
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/TransparentFooter.js";
+import Shopsetup from "views/examples/Shopsetup.js";
+import Bank from "views/examples/Bank.js";
+
 import Profile from "views/examples/Profile.js";
 import Product from "views/examples/Product.js";
 import Cart from "views/examples/Cart.js";
 import Contact from "views/examples/Contact.js";
-
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 function Index() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -50,8 +50,7 @@ function Index() {
    
     
     <BrowserRouter>
-     <ExamplesNavbar />
-                <LandingPageHeader />
+    
                 <Switch>
      <Route path="/" exact component={LandingPage}   />
     <Route path="/Search" component={Search}   />
@@ -59,6 +58,8 @@ function Index() {
 <Route path="/cart" component={Cart}   />
 <Route path="/product" component={Product}   />
 <Route path="/contact" component={Contact}   />
+<Route path="/shopsetup" component={Shopsetup}   />
+<Route path="/bank" component={Bank}   />
 </Switch>
 <DefaultFooter />
       </BrowserRouter>

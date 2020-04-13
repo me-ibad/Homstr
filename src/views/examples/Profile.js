@@ -1,6 +1,8 @@
 import React from 'react'
-
 import Card from "components/Card/pcard.js";
+import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 import {
     Button,
     Input,
@@ -19,7 +21,8 @@ import {
 function Profile() {
     return (
         <div>
-            
+            <ExamplesNavbar />
+<LandingPageHeader />
             <div>
             
         {/* Page Content */}
@@ -38,7 +41,14 @@ function Profile() {
                 <a href="" className="list-group-item">Reviews</a>
                 <a href="" className="list-group-item">About Us</a>
               </div>
+
+              <br/> <br/> <br/>
+           <div className="button_cont" align="center">
+             <a className="example_f" href="add-website-here" target="_blank" rel="nofollow">
+             <span>Add Product</span></a></div>
+           
             </div>
+            
             {/* /.col-lg-3 */}
             <div className="col-lg-9">
               <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">

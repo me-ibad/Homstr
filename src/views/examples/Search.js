@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Card2 from "components/Card/pcard.js";
+import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 import PropTypes from 'prop-types'
 import {
     Button,
@@ -25,7 +28,8 @@ export class Search extends Component {
             <div>
                 
 
-
+<ExamplesNavbar />
+<LandingPageHeader />
                 
                   <Container>
                     

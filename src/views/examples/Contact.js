@@ -1,4 +1,5 @@
 import React from 'react'
+import ColorNav from "components/Navbars/ColorNav.js";
 import {
     Button,
     Input,
@@ -27,6 +28,7 @@ function Contact() {
 
     return (
         <div>
+          <ColorNav />
             <div className="section section-contact-us text-center">
           <Container>
             <h2 className="title">Want to work with us?</h2>

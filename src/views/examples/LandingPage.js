@@ -1,6 +1,10 @@
 import React from "react";
 import Card1 from "components/Card/scard.js";
 import Card2 from "components/Card/pcard.js";
+
+import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import DefaultFooter from "components/Footers/TransparentFooter.js";
 // reactstrap components
 import {
   Button,
@@ -32,7 +36,8 @@ function LandingPage() {
   });
   return (
     <>
-  
+  <ExamplesNavbar />
+<LandingPageHeader />
       <div className="wrapper">
         
         {/* <div className="section section-about-us">

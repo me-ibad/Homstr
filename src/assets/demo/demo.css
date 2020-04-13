@@ -576,5 +576,30 @@ padding: 8px 25px 8px 10px;
   border: 5px solid green ;
 }
 
+.sred{
+  color: red;
+}
+.radioset{
+   margin-top: 30px;
+ margin-left: 60px ;
+}
+.leftst{
+  margin-left: -20px;
+}
+.sett-1{
+  margin-top: 20px;
+}
 
+/* bank */
+.rounded-lg {
+  border-radius: 1rem;
+}
 
+.nav-pills .nav-link {
+  color: #555;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+}
+/* button */
