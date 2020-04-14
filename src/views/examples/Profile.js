@@ -1,14 +1,21 @@
 import React from 'react'
-import Card from "components/Card/pcard.js";
+import Pcard from "components/Card/pcard.js";
 import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/TransparentFooter.js";
+import Addproduct from "components/Product/Addproduct.js";
 import {
+    Card,
+    CardHeader,
+    CardBody,
+    Modal,
+    ModalBody,
     Button,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
+    NavItem,
+    NavLink,
+    Nav,
+    TabContent,
+    TabPane,
     Container,
     Row,
     Col,
@@ -17,13 +24,18 @@ import {
     PaginationLink
   } from "reactstrap";
 
+
   
 function Profile() {
-    return (
+   const [iconPills, setIconPills] = React.useState("1");
+   const [pills, setPills] = React.useState("1");
+  const [modal1, setModal1] = React.useState(false);
+  const [modal2, setModal2] = React.useState(false);
+  return (
         <div>
             <ExamplesNavbar />
 <LandingPageHeader />
-            <div>
+            
             
         {/* Page Content */}
         <div className="container">
@@ -36,17 +48,50 @@ function Profile() {
                   src={require("assets/img/img.jpg")}
                 ></img>
               <h2 className="my-4">Shop Name</h2>
-              <div className="list-group">
-                <a href="" className="list-group-item active">Products</a>
-                <a href="" className="list-group-item">Reviews</a>
-                <a href="" className="list-group-item">About Us</a>
-              </div>
+               <Button className="btn-round" color="info" type="button">
+                <i className="now-ui-icons ui-2_favourite-28"></i>
+                Add Favourite
+              </Button>
 
               <br/> <br/> <br/>
            <div className="button_cont" align="center">
-             <a className="example_f" href="add-website-here" target="_blank" rel="nofollow">
+             <a className="example_f" onClick={() => setModal1(true)} target="_blank" rel="nofollow">
              <span>Add Product</span></a></div>
            
+
+<Modal isOpen={modal1} toggle={() => setModal1(false)}>
+                <div className="modal-header justify-content-center">
+                  <button
+                    className="close"
+                    type="button"
+                    onClick={() => setModal1(false)}
+                  >
+                    <i className="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+                  <h4 className="title title-up">Add New Product</h4>
+                </div>
+                <ModalBody>
+                  <Addproduct/>
+                </ModalBody>
+                <div className="modal-footer">
+                  <Button color="primary" type="button">
+                    Add Product
+                  </Button>
+                  <Button
+                    color="danger"
+                    type="button"
+                    onClick={() => setModal1(false)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </Modal>
+
+
+
+
+
+
             </div>
             
             {/* /.col-lg-3 */}
@@ -77,41 +122,105 @@ function Profile() {
                   <span className="sr-only">Next</span>
                 </a>
               </div>
-              <div className="row">
-                <div className="col-lg-4 col-md-6 mb-4">
-                  
-<Card/>
 
 
-                </div>
-                <div className="col-lg-4 col-md-6 mb-4">
-                <Card/>
+
+              
+                
+                  <Nav className="justify-content-center" role="tablist" tabs>
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "1" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("1");
+                        }}
+                      >
+                        <i className="now-ui-icons shopping_shop"></i>
+                        Home
+                      </NavLink>
+                    </NavItem>
+                   
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "3" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("3");
+                        }}
+                      >
+                        <i className="now-ui-icons ui-2_like"></i>
+                        Reviews
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "4" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("4");
+                        }}
+                      >
+                        <i className="now-ui-icons objects_umbrella-13"></i>
+                        About
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+                
+                
+                  <TabContent
+                    className="text-center"
+                    activeTab={"iconPills" + iconPills}
+                  >
+                    <TabPane tabId="iconPills1">
+                     
+                    <Row>
+                <Col lg="4" md="4" sm="2">                
+<Pcard/>
+</Col>
+ <Col lg="4" md="4" sm="2">                
+<Pcard/>
+</Col>
+
+ <Col lg="4" md="4" sm="2">                
+<Pcard/>
+</Col>
+
+ 
+
+</Row>
+
+
+
+
+                
+                {/* <div className="col-lg-4 col-md-6 mb-4">
+                <Pcard/>
                 </div>
 
                 <div className="col-lg-4 col-md-6 mb-4">
-               <Card/>
+               <Pcard/>
                 </div>
-                <div className="col-lg-4 col-md-6 mb-4">
-                <Card/>
-                </div>
-                <div className="col-lg-4 col-md-6 mb-4">
-                <Card/>
-                </div>
-                <div className="col-lg-4 col-md-6 mb-4">
-                <Card/>
-                </div>
-              </div>
-              {/* /.row */}
-            </div>
-            {/* /.col-lg-9 */}
-          </div>
-          {/* /.row */}
-        </div>
-      </div>
+              
 
 
-      <div className="row">
-                <div className="col-lg-6 col-md-6 mb-6">
+                 <div className="col-lg-4 col-md-6 mb-4">
+                <Pcard/>
+                </div>
+                <div className="col-lg-4 col-md-6 mb-4">
+                <Pcard/>
+                </div>
+                <div className="col-lg-4 col-md-6 mb-4">
+                <Pcard/>
+                </div>  */}
+             
+
+             <br/>
+ <div className="row">
+                <div className="col-lg-5 col-md-6 mb-6">
 </div>
 <div className="col-lg-4 col-md-6 mb-4">
       <Pagination>
@@ -171,6 +280,184 @@ function Profile() {
 
 </div>
 </div>
+
+                    </TabPane>
+                   
+                    <TabPane tabId="iconPills3">
+                     <br/>
+      <div className="container">
+        <div className="row">
+          < div className = "col-lg-5 col-md-6 mb-4" >
+            <div className="rating-block">
+              <h4>Average user rating</h4>
+              <h2 className="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+              <ul className="list-unstyled list-inline my-2">
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+      </ul>
+            </div>
+          </div>
+          < div className = "col-lg-5 col-md-6 mb-4" >
+            <h4>Rating breakdown</h4>
+            <div className="pull-left">
+              <div className="pull-left" style={{width: '35px', lineHeight: 1}}>
+                <div style={{height: '9px', margin: '5px 0'}}>5 <span className="glyphicon glyphicon-star" /></div>
+              </div>
+              <div className="pull-left" style={{width: '180px'}}>
+                <div className="progress" style={{height: '9px', margin: '8px 0'}}>
+                  <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow={5} aria-valuemin={0} aria-valuemax={5} style={{width: '1000%'}}>
+                    <span className="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pull-right" style={{marginLeft: '10px'}}>1</div>
+            </div>
+            <div className="pull-left">
+              <div className="pull-left" style={{width: '35px', lineHeight: 1}}>
+                <div style={{height: '9px', margin: '5px 0'}}>4 <span className="glyphicon glyphicon-star" /></div>
+              </div>
+              <div className="pull-left" style={{width: '180px'}}>
+                <div className="progress" style={{height: '9px', margin: '8px 0'}}>
+                  <div className="progress-bar progress-bar-primary" role="progressbar" aria-valuenow={4} aria-valuemin={0} aria-valuemax={5} style={{width: '80%'}}>
+                    <span className="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pull-right" style={{marginLeft: '10px'}}>1</div>
+            </div>
+            <div className="pull-left">
+              <div className="pull-left" style={{width: '35px', lineHeight: 1}}>
+                <div style={{height: '9px', margin: '5px 0'}}>3 <span className="glyphicon glyphicon-star" /></div>
+              </div>
+              <div className="pull-left" style={{width: '180px'}}>
+                <div className="progress" style={{height: '9px', margin: '8px 0'}}>
+                  <div className="progress-bar progress-bar-info" role="progressbar" aria-valuenow={3} aria-valuemin={0} aria-valuemax={5} style={{width: '60%'}}>
+                    <span className="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pull-right" style={{marginLeft: '10px'}}>0</div>
+            </div>
+            <div className="pull-left">
+              <div className="pull-left" style={{width: '35px', lineHeight: 1}}>
+                <div style={{height: '9px', margin: '5px 0'}}>2 <span className="glyphicon glyphicon-star" /></div>
+              </div>
+              <div className="pull-left" style={{width: '180px'}}>
+                <div className="progress" style={{height: '9px', margin: '8px 0'}}>
+                  <div className="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={2} aria-valuemin={0} aria-valuemax={5} style={{width: '40%'}}>
+                    <span className="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pull-right" style={{marginLeft: '10px'}}>0</div>
+            </div>
+            <div className="pull-left">
+              <div className="pull-left" style={{width: '35px', lineHeight: 1}}>
+                <div style={{height: '9px', margin: '5px 0'}}>1 <span className="glyphicon glyphicon-star" /></div>
+              </div>
+              <div className="pull-left" style={{width: '180px'}}>
+                <div className="progress" style={{height: '9px', margin: '8px 0'}}>
+                  <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={1} aria-valuemin={0} aria-valuemax={5} style={{width: '20%'}}>
+                    <span className="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pull-right" style={{marginLeft: '10px'}}>0</div>
+            </div>
+          </div>			
+        </div>			
+        <div className="row">
+          < div className = "col-lg-10 col-md-8 mb-6" >
+            <hr />
+            <div className="review-block">
+              <div className="row">
+                <div className="col-md-3">
+                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" className="img-rounded" />
+                  <div className="review-block-name"><a href="#">nktailor</a></div>
+                  <div className="review-block-date">January 29, 2016<br />1 day ago</div>
+                </div>
+                <div className="col-md-9">
+                  <ul className="list-unstyled list-inline my-2">
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+      </ul>
+                  <div className="review-block-title">this was nice in buy</div>
+                  <div className="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                </div>
+              </div>
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" className="img-rounded" />
+                  <div className="review-block-name"><a href="#">nktailor</a></div>
+                  <div className="review-block-date">January 29, 2016<br />1 day ago</div>
+                </div>
+                <div className="col-sm-9">
+                 <ul className="list-unstyled list-inline my-2">
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+      </ul>
+                  <div className="review-block-title">this was nice in buy</div>
+                  <div className="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                </div>
+              </div>
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" className="img-rounded" />
+                  <div className="review-block-name"><a href="#">nktailor</a></div>
+                  <div className="review-block-date">January 29, 2016<br />1 day ago</div>
+                </div>
+                <div className="col-sm-9">
+                 <ul className="list-unstyled list-inline my-2">
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+      </ul>
+                  <div className="review-block-title">this was nice in buy</div>
+                  <div className="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                    </TabPane>
+                    <TabPane tabId="iconPills4">
+                      <h2> Shop Name</h2>
+                      <h3> Owner Name</h3>
+                       <h4> Address</h4>
+                 </TabPane>
+                  </TabContent>
+                
+              
+
+
+
+
+
+              
+              {/* /.row */}
+            </div>
+            {/* /.col-lg-9 */}
+          </div>
+          {/* /.row */}
+        </div>
+      
+
+
+     
 
 
     

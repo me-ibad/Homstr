@@ -142,15 +142,16 @@ href="/shopsetup"
 
 <Col lg="1" md="1" sm="1">
 <Button color="link"
-
+href="/profile"
+   onClick={"profile"}
 >Skip</Button>
    </Col>
 
 
    <Col lg="2" md="2" sm="2">
 <Button color="info"
-href="/bank"
-   onClick={"bank"}
+href="/profile"
+   onClick={"profile"}
 
 >Continue</Button>
    </Col>

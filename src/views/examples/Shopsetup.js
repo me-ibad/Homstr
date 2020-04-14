@@ -727,7 +727,34 @@ function Shopsetup() {
 
    </Row>
    
+
+
+
    </div>
+< div className = "sett-1" >
+  
+  
+<Row>
+ <Col lg="9" md="7" sm="7">
+
+ <div className="textarea-container">
+                  <Input
+                    cols="80"
+                    name="name"
+                    placeholder = "Add Description"
+                    rows="4"
+                    type="textarea"
+                  ></Input>
+                </div>
+     </Col>
+     </Row>
+
+
+  
+  
+  </ div>
+
+
 < div className = "sett-1" >
 <Row>
  <Col lg="10" md="8" sm="8">

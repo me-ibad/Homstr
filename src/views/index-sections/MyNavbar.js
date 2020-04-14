@@ -2,6 +2,8 @@ import React from 'react'
 import {
     Button,
     Collapse,
+     Modal,
+     ModalBody,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
@@ -15,6 +17,9 @@ import {
     UncontrolledTooltip
 } from "reactstrap";
 function MyNavbar() {
+ const [modal1, setModal1] = React.useState(false);
+ const [modal2, setModal2] = React.useState(false);
+
     const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
     const [collapseOpen, setCollapseOpen] = React.useState(false);
     React.useEffect(() => {
@@ -39,6 +44,40 @@ function MyNavbar() {
     return (
         
             <Container>
+<Modal
+                modalClassName="modal-mini modal-info"
+                toggle={() => setModal2(false)}
+                isOpen={modal2}
+              >
+                <div className="modal-header justify-content-center">
+                  <div className="modal-profile">
+                    <i className="now-ui-icons users_circle-08"></i>
+                  </div>
+                </div>
+                <ModalBody>
+                  <h2>Coming Soon!</h2>
+                </ModalBody>
+                <div className="modal-footer">
+                  <Button className="btn-neutral" color="link" type="button">
+                    Back
+                  </Button>
+                  <Button
+                    className="btn-neutral"
+                    color="link"
+                    type="button"
+                    onClick={() => setModal2(false)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </Modal>
+
+
+
+
+
+
+
           <div className="navbar-translate">
             HOMSTR
             
@@ -78,7 +117,7 @@ function MyNavbar() {
                         <NavLink
                       
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          onClick={() => setModal2(true)}
                         >
                           Message
                           <i
@@ -142,8 +181,8 @@ function MyNavbar() {
                             Your Shop
                           </DropdownItem>
                           <DropdownItem
-                            href="/shopsetup"
-                            onClick={"shopsetup"}
+                            href=""
+                            onClick={""}
                           >
                             History
                           </DropdownItem>

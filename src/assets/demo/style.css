@@ -145,8 +145,7 @@ background-color: lightgray;
 
   /* profile  */
 
- 
-  
+
 /* .actives{
   background-color: blue;
 } */
@@ -349,6 +348,7 @@ img {
 width: 10px;
 
 }
+
 /* button */
 .example_f {
   border-radius: 4px;
@@ -388,4 +388,75 @@ width: 10px;
 .example_f:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+
+/* profile review */
+
+.btn-grey {
+  background-color: #D8D8D8;
+  color: #FFF;
+}
+
+.rating-block {
+  background-color: #FAFAFA;
+  border: 1px solid #EFEFEF;
+  padding: 15px 15px 20px 15px;
+  border-radius: 3px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.padding-bottom-7 {
+  padding-bottom: 7px;
+}
+
+.review-block {
+  background-color: #FAFAFA;
+  border: 1px solid #EFEFEF;
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.review-block-name {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.review-block-date {
+  font-size: 12px;
+}
+
+.review-block-rate {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.review-block-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.review-block-description {
+  font-size: 13px;
+}
+
+/* map */
+.map-container-2 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-container-2 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
