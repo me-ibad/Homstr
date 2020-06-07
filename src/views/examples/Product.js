@@ -3,19 +3,30 @@ import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/TransparentFooter.js";
 import {
-    Button,
+   
     Label,
+     Input,
+     InputGroupAddon,
+     InputGroupText,
+     InputGroup,
     FormGroup,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
-    Container,
+     Modal,
+     CardBody,
+     Button,
+     NavItem,
+     NavLink,
+     Nav,
+     TabContent,
+     TabPane,
     Row,
     Col
   } from "reactstrap";
 
 function Product() {
+ const [iconPills, setIconPills] = React.useState("1");
+ const [pills, setPills] = React.useState("1");
+
+
     return (
         <div>
              
@@ -25,7 +36,7 @@ function Product() {
 		<div class="card1">
 			<div class="container-fliud">
 				<div class="wrapper row">
-					<div class="preview col-md-6">
+					< div class = "preview col-md-6  col-lg-6" >
 						
 						<div class="preview-pic tab-content">
 						  <div class="tab-pane active" id="pic-1"><img src={require("assets/img/jacket.jpg")} /></div>
@@ -43,37 +54,280 @@ function Product() {
 						</ul>
 						
 					</div>
-					<div class="details col-md-6">
-						<h3 class="product-title">men's Jacket fashion</h3>
-						<div class="rating">
-                       < div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
-							<span class="review-no">41 reviews</span>
-						</div>
-						<p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<h4 class="price">current price: <span>780 Rs</span></h4>
-						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-						<h5 class="sizes">sizes:
-							<span class="size" data-toggle="tooltip" title="small">s</span>
-							<span class="size" data-toggle="tooltip" title="medium">m</span>
-							<span class="size" data-toggle="tooltip" title="large">l</span>
-							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-						</h5>
-						<h5 class="colors">colors:
-							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-							<span class="color green"></span>
-							<span class="color blue"></span>
-						</h5>
-						<div class="action">
-							<Button color="info" type="button">add to cart</Button>
-							<Button color="danger" className="like btn btn-default" type="button"><span class="fa fa-heart"></span></Button>
-						</div>
-					</div>
+
+
+
+
+					
+					< div class = " col-md-6 col-lg-6" >
+						 
+          
+            <h2 class="name">
+              Product Name Title Here 
+			  <br/>
+              <small>Product by <a href="">Adeline</a></small>
+			  </h2>
+			  <Row>
+          <Col lg="2" md="2" sm="4" >
+        <ul className="list-unstyled list-inline my-2">
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+      </ul>
+</Col>
+
+ <Col lg="4" md="4" sm="4" >
+ <span class="fa fa-2x"><h5>(109) Votes</h5></span>  
+              
+
+	 </Col>
+</Row>
+<br/>
+<Row>
+<Col lg="6" md="6" sm="4" >
+
+<h2>1090 Rs</h2>
+
+ <div class="certified">
+              <ul>
+                <li><a href="javascript:void(0);">Delivery time<span>7 Working Days</span></a></li>
+                <li><a href="javascript:void(0);">Certified<span>Quality Assured</span></a></li>
+              </ul>
+            </div>
+	</Col>
+</Row>
+
+<Row>
+
+<Col lg="2" md="2" sm="2" >
+
+<FormGroup className="pinp">
+                  <Input
+                    defaultValue="1"
+                    placeholder=""
+                    type="text"
+                  ></Input>
+                </FormGroup>
+  </Col>
+
+
+<Col lg="6" md="6" sm="4" >
+<Button className="btn-round" color="danger" type="button">
+                <i className="now-ui-icons ui-1_simple-add"></i>
+                Add To Cart
+              </Button>
+
+  </Col>
+  </Row>
+</div>
+
+                <Row> 
+                  <Col lg="3" md="3" sm="3" xm="3" >
+
+                    </Col>
+                  <Col lg="8" md="8" sm="8" xm="8" >
+
+                  
+  <Nav className="justify-content-center" role="tablist" tabs>
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "1" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("1");
+                        }}
+                      >
+                        <i className="now-ui-icons files_paper"></i>
+                        Description
+                      </NavLink>
+                    </NavItem>
+                   
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "3" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("3");
+                        }}
+                      >
+                        <i className="now-ui-icons design_bullet-list-67"></i>
+                        Specification
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={iconPills === "4" ? "active" : ""}
+                        href="#pablo"
+                        onClick={e => {
+                          e.preventDefault();
+                          setIconPills("4");
+                        }}
+                      >
+                        <i className="now-ui-icons ui-2_like"></i>
+                        Reviews
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+
+<TabContent
+                    className="text-center"
+                    activeTab={"iconPills" + iconPills}
+                  >
+                    <TabPane tabId="iconPills1">
+                      <p>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                        the name Kanye West on it, it’s supposed to be pushing
+                        
+                        the nucleus.
+                      </p>
+                    </TabPane>
+                    
+                    <TabPane tabId="iconPills3">
+                      <p>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                        the name Kanye West on it, it’s supposed to be pushing
+                        the 
+                        because I got the answers. I understand culture. I am
+                        the nucleus.
+						I think that’ s a responsibility that I have, to push
+						possibilities, to show people, this is the level that
+						things could be at.So when you get something that has
+						the name Kanye West on it, it’ s supposed to be pushing
+						the
+						because I got the answers.I understand culture.I am
+						the nucleus.
+                      </p>
+                    </TabPane>
+                    <TabPane tabId="iconPills4">
+                    <br />
+                    <div className="container">
+                      <div className="row">
+                        < div className="col-lg-5 col-md-6 mb-4" >
+                          <div className="rating-block">
+                            <h4>Average user rating</h4>
+                            <h2 className="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                            <ul className="list-unstyled list-inline my-2">
+                              <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                              <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                              <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                              <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                              <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                        < div className="col-lg-5 col-md-6 mb-4" >
+                          <h4>Rating breakdown</h4>
+                          <div className="pull-left">
+                            <div className="pull-left" style={{ width: '35px', lineHeight: 1 }}>
+                              <div style={{ height: '9px', margin: '5px 0' }}>5 <span className="glyphicon glyphicon-star" /></div>
+                            </div>
+                            <div className="pull-left" style={{ width: '180px' }}>
+                              <div className="progress" style={{ height: '9px', margin: '8px 0' }}>
+                                <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow={5} aria-valuemin={0} aria-valuemax={5} style={{ width: '1000%' }}>
+                                  <span className="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="pull-right" style={{ marginLeft: '10px' }}>1</div>
+                          </div>
+                          <div className="pull-left">
+                            <div className="pull-left" style={{ width: '35px', lineHeight: 1 }}>
+                              <div style={{ height: '9px', margin: '5px 0' }}>4 <span className="glyphicon glyphicon-star" /></div>
+                            </div>
+                            <div className="pull-left" style={{ width: '180px' }}>
+                              <div className="progress" style={{ height: '9px', margin: '8px 0' }}>
+                                <div className="progress-bar progress-bar-primary" role="progressbar" aria-valuenow={4} aria-valuemin={0} aria-valuemax={5} style={{ width: '80%' }}>
+                                  <span className="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="pull-right" style={{ marginLeft: '10px' }}>1</div>
+                          </div>
+                          <div className="pull-left">
+                            <div className="pull-left" style={{ width: '35px', lineHeight: 1 }}>
+                              <div style={{ height: '9px', margin: '5px 0' }}>3 <span className="glyphicon glyphicon-star" /></div>
+                            </div>
+                            <div className="pull-left" style={{ width: '180px' }}>
+                              <div className="progress" style={{ height: '9px', margin: '8px 0' }}>
+                                <div className="progress-bar progress-bar-info" role="progressbar" aria-valuenow={3} aria-valuemin={0} aria-valuemax={5} style={{ width: '60%' }}>
+                                  <span className="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="pull-right" style={{ marginLeft: '10px' }}>0</div>
+                          </div>
+                          <div className="pull-left">
+                            <div className="pull-left" style={{ width: '35px', lineHeight: 1 }}>
+                              <div style={{ height: '9px', margin: '5px 0' }}>2 <span className="glyphicon glyphicon-star" /></div>
+                            </div>
+                            <div className="pull-left" style={{ width: '180px' }}>
+                              <div className="progress" style={{ height: '9px', margin: '8px 0' }}>
+                                <div className="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={2} aria-valuemin={0} aria-valuemax={5} style={{ width: '40%' }}>
+                                  <span className="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="pull-right" style={{ marginLeft: '10px' }}>0</div>
+                          </div>
+                          <div className="pull-left">
+                            <div className="pull-left" style={{ width: '35px', lineHeight: 1 }}>
+                              <div style={{ height: '9px', margin: '5px 0' }}>1 <span className="glyphicon glyphicon-star" /></div>
+                            </div>
+                            <div className="pull-left" style={{ width: '180px' }}>
+                              <div className="progress" style={{ height: '9px', margin: '8px 0' }}>
+                                <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={1} aria-valuemin={0} aria-valuemax={5} style={{ width: '20%' }}>
+                                  <span className="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="pull-right" style={{ marginLeft: '10px' }}>0</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        < div className="col-lg-10 col-md-8 mb-6" >
+                          <hr />
+                              <div class="ui comments">
+                                <div class="comment">
+                                  <a class="avatar"><img src="/images/avatar/small/joe.jpg" /></a>
+                                  <div class="content">
+                                    <div class="author">Tom Lukic</div>
+                                    <div class="text">
+                                      This will be great for business reports. I will definitely download this.
+      </div>
+                                    <div class="actions">
+                                      <ul className="list-unstyled list-inline my-2">
+                                        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    </TabPane>
+                  </TabContent>
+
+                  </Col>
+
+                </Row>
+
+
+
+					
 				</div>
 			</div>
 		</div>

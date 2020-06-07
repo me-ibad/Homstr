@@ -79,8 +79,8 @@ function MyNavbar() {
 
 
           <div className="navbar-translate">
-            HOMSTR
             
+          <span className="brandnamsty">HOMSTR</span>
             <NavbarBrand
               href="www.encodersoft.codes"
               target="_blank"
@@ -133,11 +133,12 @@ function MyNavbar() {
                           href="/profile"
                           onClick={"/profile"}
                         >
-                          User
-                          <i
-                            aria-hidden={true}
-                            className="now-ui-icons users_single-02"
-                          ></i>
+                <img
+                  src="https://react.semantic-ui.com/images/wireframe/square-image.png"
+                  class="ui avatar image"
+                />
+                User
+                         
                         </NavLink>
                       </NavItem>
                      

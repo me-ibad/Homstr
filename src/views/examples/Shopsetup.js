@@ -109,7 +109,8 @@ function Shopsetup() {
  <Col lg="3" md="4" sm="6">
  <FormGroup>
        <Label for="ShopType">Shop Category<span className="sred">*</span></Label>
-        <Input type="select" name="select" id="exampleSelect">
+                  <br />
+                  <select class="ui dropdown dropstyl ">
           <option>--select option--</option>
           <option>Groceries</option>
           <option>Health/Medicine</option>
@@ -118,7 +119,7 @@ function Shopsetup() {
            <option>Foods/Drinks</option>
            <option>Cosmetics</option>
            <option>Fruit/Vegitable</option>
-        </Input>
+        </select>
       </FormGroup>
    </Col>
  <Col lg="1" md="1" sm="1">
@@ -126,14 +127,15 @@ function Shopsetup() {
  <Col lg="3" md="4" sm="6">
  <FormGroup>
        <Label for="ShopType">Shop Employees<span className="sred">*</span></Label>
-        <Input type="select" name="select" id="exampleSelect">
+                  <br />
+                  <select class="ui dropdown dropstyl ">
          <option>--select option--</option>
           <option>individual</option>
           <option>2-4</option>
           <option>5-10</option>
           <option>10+</option>
           
-        </Input>
+       </select>
       </FormGroup>
    </Col>
 
@@ -219,9 +221,11 @@ function Shopsetup() {
    <Col lg="1" md="1" sm="1">
    </Col>
 <Col lg="3" md="4" sm="6">
-   <Label for="ShopName">City<span className="sred">*</span></Label>
+  
                 <FormGroup>
-                 <Input type="select" name="select" id="exampleSelect">
+                  <Label for="ShopName">City<span className="sred">*</span></Label>
+                  <br />
+                  <select class="ui dropdown dropstyl ">
          <option>--select City--</option>
            <option value="Islamabad">Islamabad</option>
     <option value="" disabled>Punjab Cities</option>
@@ -463,16 +467,18 @@ function Shopsetup() {
     <option value="Zhob">Zhob</option>
     <option value="Ziarat">Ziarat</option>
           
-        </Input>
+       </select>
                 </FormGroup>
    </Col>
 
  <Col lg="1" md="1" sm="1">
    </Col>
 <Col lg="3" md="4" sm="6">
-   <Label for="ShopName">Country<span className="sred">*</span></Label>
+ 
 <FormGroup>
-                 <Input type="select" name="select" id="exampleSelect">
+                  <Label for="ShopName">Country<span className="sred">*</span></Label>
+                  <br />
+                  <select class="ui dropdown dropstyl ">
                    <option>--select country--</option>
 <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
@@ -720,7 +726,7 @@ function Shopsetup() {
    <option value="Zaire">Zaire</option>
    <option value="Zambia">Zambia</option>
    <option value="Zimbabwe">Zimbabwe</option>
-</Input>
+</select>
                 </FormGroup>
 
 </Col>

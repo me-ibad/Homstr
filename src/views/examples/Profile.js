@@ -9,6 +9,8 @@ import {
     CardHeader,
     CardBody,
     Modal,
+    FormGroup,
+    Label,
     ModalBody,
     Button,
     NavItem,
@@ -48,16 +50,27 @@ function Profile() {
                   src={require("assets/img/img.jpg")}
                 ></img>
               <h2 className="my-4">Shop Name</h2>
-               <Button className="btn-round" color="info" type="button">
-                <i className="now-ui-icons ui-2_favourite-28"></i>
-                Add Favourite
-              </Button>
+              
+            <div class="ui left labeled button">
+              <a class="ui right pointing basic label">2,048</a>
+              <button class="ui icon button" tabindex="0">
+                <i aria-hidden="true" class="fork icon"></i>
+              </button>
+            </div>
 
               <br/> <br/> <br/>
            <div className="button_cont" align="center">
              <a className="example_f" onClick={() => setModal1(true)} target="_blank" rel="nofollow">
              <span>Add Product</span></a></div>
-           
+            <FormGroup>
+              <Label for="ShopType">Filter</Label>
+              <br />
+              <select class="ui dropdown ">
+                <option>--select option--</option>
+
+                <option>others</option>
+              </select>
+            </FormGroup>
 
 <Modal isOpen={modal1} toggle={() => setModal1(false)}>
                 <div className="modal-header justify-content-center">
@@ -74,8 +87,11 @@ function Profile() {
                   <Addproduct/>
                 </ModalBody>
                 <div className="modal-footer">
-                  <Button color="primary" type="button">
+                  <Button color="success" type="button">
                     Add Product
+                  </Button>
+                <Button color="primary" type="button">
+                  Details
                   </Button>
                   <Button
                     color="danger"
@@ -176,7 +192,7 @@ function Profile() {
                     activeTab={"iconPills" + iconPills}
                   >
                     <TabPane tabId="iconPills1">
-                     
+                     <br/>
                     <Row>
                 <Col lg="4" md="4" sm="2">                
 <Pcard/>

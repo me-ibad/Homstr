@@ -38,7 +38,7 @@ function LandingPage() {
     <>
   <ExamplesNavbar />
 <LandingPageHeader />
-      <div className="wrapper">
+      <div className="container">
         
         {/* <div className="section section-about-us">
           <Container>
@@ -52,11 +52,11 @@ function LandingPage() {
               <br></br>
               <Row>
                
-                <Col md="4" >
+                <Col lg="4" md="4" sm="6" xm="6" >
                 <Card1/>
                 </Col>
              
-                <Col md="4">
+                <Col lg="4" md="4" sm="6" xm="6">
                 
                 <Card1/>
 
@@ -65,7 +65,7 @@ function LandingPage() {
                 </Col>
 
 
-                <Col md="4">
+                <Col lg="4" md="4" sm="6" xm="6">
                 <Card1/>
                 </Col>
               </Row>
@@ -76,19 +76,19 @@ function LandingPage() {
             
 <Row>
 
-<Col md="3" >
+                <Col lg="3" md="3" sm="6" xm="6">
                 <Card2/>
                 </Col>
              
-                <Col md="3">
+                <Col lg="3" md="3" sm="6" xm="6">
                 
                 <Card2/>
                 </Col>
 
-                <Col md="3">
+                <Col lg="3" md="3" sm="6" xm="6">
                 <Card2/>
                 </Col>
-                <Col md="3">
+                <Col lg="3" md="3" sm="6" xm="6">
                 <Card2/>
                 </Col>
 
@@ -165,7 +165,7 @@ function LandingPage() {
             </Row>
           </Container>
         </div> */}
-        <hr class="my-4"/>
+        
 
 
 

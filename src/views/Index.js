@@ -28,7 +28,9 @@ import LandingPage from "views/examples/LandingPage.js";
 import Search from "views/examples/Search.js";
 import Shopsetup from "views/examples/Shopsetup.js";
 import Bank from "views/examples/Bank.js";
+import Edituser from "views/examples/Edituser.js";
 
+import Productdetails from "views/examples/Productdetails.js";
 import Profile from "views/examples/Profile.js";
 import Product from "views/examples/Product.js";
 import Cart from "views/examples/Cart.js";
@@ -60,6 +62,8 @@ function Index() {
 <Route path="/contact" component={Contact}   />
 <Route path="/shopsetup" component={Shopsetup}   />
 <Route path="/bank" component={Bank}   />
+        <Route path="/productdetails" component={Productdetails} />
+        <Route path="/edituser" component={Edituser} />
 </Switch>
 <DefaultFooter />
       </BrowserRouter>

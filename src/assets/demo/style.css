@@ -1,28 +1,113 @@
 
-  
+  /* Product details */
+.dropstyl{
+  width: 250px;
+}
+
+
+
+.brandnamsty{
+  font-weight: 900;
+  color: white;
+}
+
   /*# Card css */
   
 
 
- .card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
-    margin-top:30px;
-    margin-left: 20px;
-    margin-bottom:10px;
-    background-color:#FFF;
-    width: 50%;
-    padding: 1rem;
-    height: 50;
-  }
-  
-  .card:hover {
-    -webkit-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
-    box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
-  }
 
+
+
+.cards {
+    
+    
+  
+}
+
+
+
+
+
+
+
+.starreview{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+.addfav{
+
+   position: absolute;
+  top: 17px;
+  right: 16px;
+cursor: pointer;
+}
+.like{
+  color:darkred;
+}
+
+.card--1 {
+
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+    width: 250px;
+    height: 270px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+
+
+
+.card--1:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+
+
+
+
+}
+
+.card__info {
+margin-top: 10px;
+  background-color: #fff;
+
+}
+.vertical{
+  float: right;
+  
+}
+
+.card__title {
+ /* margin-left: -70px; */
+ font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card__by {
+   
+    font-family: 'Raleway', sans-serif;
+    margin-top: -10px;
+    float: left;
+}
+
+.card__author {
+   
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+
+
+
+
+  /* old */
+
+ 
   .card-landing{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.2s ease-in-out;
@@ -36,7 +121,9 @@
     
   }
   .wrapper{
-    margin-left: 100px;
+    margin-left: 10px;
+ 
+
   }
   .card-landing:hover {
     -webkit-box-shadow: -1px 4px 32px -1px rgba(0,0,0,0.75);
@@ -114,7 +201,9 @@
     font-size: .8rem;
   }
   .chili-pepper-text {
-    color: #9B1B30;
+    float: left;
+    font-weight: bold;
+    color: black;
   }
   .collapse-content .fa.fa-heart:hover {
     color: #f44336 !important;
@@ -151,6 +240,15 @@ background-color: lightgray;
 } */
 
 /* product  css */
+.fa{
+
+margin-top: 10px;;
+
+}
+
+.pinp{
+  margin-top: 10px;
+}
 
 
 /*****************globals*************/
@@ -183,7 +281,7 @@ img {
 
 .preview-thumbnail.nav-tabs {
   border: none;
-  margin-top: 15px; }
+  margin-top: 1px; }
   .preview-thumbnail.nav-tabs li {
     width: 18%;
     margin-right: 2.5%; }
@@ -206,10 +304,10 @@ img {
             animation-duration: .3s; }
 
 .card1 {
-  margin-top: 50px;
+
   background:transparent;
   padding: 3em;
-  line-height: 1.5em; }
+  }
 
 @media screen and (min-width: 997px) {
   .wrapper {
@@ -269,7 +367,7 @@ img {
   .color:first-of-type {
     margin-left: 20px; }
 
-.add-to-cart, .like {
+.add-to-cart, .like1 {
   background: #ff9f1a;
   padding: 1.2em 1.5em;
   border: none;
@@ -278,7 +376,7 @@ img {
   color: #fff;
   -webkit-transition: background .3s ease;
           transition: background .3s ease; }
-  .add-to-cart:hover, .like:hover {
+  .add-to-cart:hover, .like1:hover {
     background: #b36800;
     color: #fff; }
 
@@ -389,6 +487,32 @@ width: 10px;
   opacity: 1;
   right: 0;
 }
+.example_e {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+.example_e:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
+}
+
+
+
+
+
+
 
 
 /* profile review */
@@ -459,4 +583,12 @@ width: 10px;
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+
+@media screen and (max-width: 600px) {
+.card--1{
+  margin-left: 100px;
+}
+
 }

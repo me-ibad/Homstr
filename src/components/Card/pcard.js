@@ -17,57 +17,56 @@ function pcard() {
         <div>
             
 
-            <div class="card mb-4 ">
-    <div class="view overlay">
-     
-      <img  src={require("assets/img/pizza.jpg")} />
-     <a href="#!">
-        <div className="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body p-3">
-    <a  href="/product"
-            onClick={"product"}
+        <section class="cards">
+          <article class=" card--1">
+
+           
+            <a href="/product" class="card_link">
+              <img src={require("assets/img/cake.jpeg")} />
+            </a>
             
-            
-            >
-      
-      <h5 className="card-title font-weight-bold pointer fuchsia-rose-text mb-0 pointer">
-       
+<div className="starreview">
 
-        Product name
-        </h5></a>
-        <a  href="/profile"
-            onClick={"profile"}
-            
-            
-            >
-      <p className="pointer aqua-sky-text mb-0 ">Shop Name</p>
-      </a>
-      <ul className="list-unstyled list-inline my-2">
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
-        <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
-      </ul>
-
-      
-      <p className="chili-pepper-text mb-0">100 Rs</p>
-
-      <Button className="butt" color="info"
-      href="/cart"
-      onClick={"cart"}
-      >
-      <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_cart-simple"
-                        ></i>
-        Cart</Button>
-    </div>
-  </div>
+              <ul className="list-unstyled list-inline my-2">
+                <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                <li className="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                <li className="list-inline-item mx-0"><i class="fas fa-star-half-alt mimosa-text"></i></li>
+              </ul>
+</div>
 
 
+
+
+
+<div className="addfav">
+
+              <i aria-hidden="true" class="like icon"></i>
+
+</div>
+
+
+            <div class="card__info">
+              
+              <h3 class="card__title">Crisp Spanish</h3>
+              
+              <span class="card__by">by <a href="/profile"
+                onClick={"/profile"} class="card__author" title="author">Celeste Mils</a></span>
+              <button class="ui vertical animated button">
+                <div class="hidden content">Shop</div>
+                <div class="visible content"><i aria-hidden="true" class="shop icon"></i></div>
+              </button>
+              <br>
+              </br>
+              <p className="chili-pepper-text mb-0"><a class="ui label">$100000.00</a></p>
+              
+             
+            </div>
+          </article>
+
+
+        </section>
         </div>
     )
 }

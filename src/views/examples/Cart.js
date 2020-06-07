@@ -14,12 +14,11 @@ import {
     Row,
     Col
   } from "reactstrap";
-  
+  import ColorNav from "components/Navbars/ColorNav.js";
 function Cart() {
     return (
         <div>
- <ExamplesNavbar />
-<LandingPageHeader />
+<ColorNav />
         <div className="bodycart">
             
 
