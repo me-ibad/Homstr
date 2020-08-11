@@ -1,5 +1,6 @@
 import React from 'react'
 import ColorNav from "components/Navbars/ColorNav.js";
+import StripeCheckout from 'react-stripe-checkout';
 import {
     Button,
     Label,
@@ -19,6 +20,18 @@ function Bank() {
  <div className = "  text-center" >
             <h2 className="title">Setup Your Account</h2>
             </div>
+
+
+
+        <StripeCheckout
+          
+          stripeKey="pk_test_51H44bKBLMrOxcuRPnFp9WHwnzDZSS6tScN7bJkmz81grmP3Lgb6hXWSEHKMFEQOYxh0UJydR31DzP9Nady7QO9UT00fsROS0fE"
+          // token={OnToken}
+       
+       />
+
+
+
 
       <div className="row">
         <div className="col-lg-7 mx-auto">

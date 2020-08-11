@@ -25,13 +25,15 @@ import SignUp from "./index-sections/SignUp.js";
 import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
 import LandingPage from "views/examples/LandingPage.js";
+import Firstpage from "views/examples/Firstpage.js";
 import Search from "views/examples/Search.js";
 import Shopsetup from "views/examples/Shopsetup.js";
 import Bank from "views/examples/Bank.js";
 import Edituser from "views/examples/Edituser.js";
-
+import Order from "views/examples/Order.js";
+import Test from "./index-sections/Test.js";
 import Productdetails from "views/examples/Productdetails.js";
-import Profile from "views/examples/Profile.js";
+import ShopProfile from "views/examples/ShopProfile.js";
 import Product from "views/examples/Product.js";
 import Cart from "views/examples/Cart.js";
 import Contact from "views/examples/Contact.js";
@@ -56,16 +58,19 @@ function Index() {
                 <Switch>
      <Route path="/" exact component={LandingPage}   />
     <Route path="/Search" component={Search}   />
-<Route path="/profile" component={Profile}   />
+        <Route path="/Firstpage" component={Firstpage} />
+<Route path="/shopprofile" component={ShopProfile}   />
 <Route path="/cart" component={Cart}   />
 <Route path="/product" component={Product}   />
 <Route path="/contact" component={Contact}   />
 <Route path="/shopsetup" component={Shopsetup}   />
+        <Route path="/order" component={Order} />
 <Route path="/bank" component={Bank}   />
         <Route path="/productdetails" component={Productdetails} />
         <Route path="/edituser" component={Edituser} />
+        <Route path="/test" component={Test} />
 </Switch>
-<DefaultFooter />
+ <DefaultFooter /> 
       </BrowserRouter>
 
 

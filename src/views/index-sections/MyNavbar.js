@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Badge from '@material-ui/core/Badge';
+
 import {
     Button,
     Collapse,
@@ -16,6 +18,12 @@ import {
     Container,
     UncontrolledTooltip
 } from "reactstrap";
+const defaultProps = {
+  color: 'secondary',
+  
+};
+
+
 function MyNavbar() {
  const [modal1, setModal1] = React.useState(false);
  const [modal2, setModal2] = React.useState(false);
@@ -119,41 +127,83 @@ function MyNavbar() {
                           href="#pablo"
                           onClick={() => setModal2(true)}
                         >
-                          Message
-                          <i
-                            aria-hidden={true}
-                            className="now-ui-icons ui-1_send"
-                          ></i>
+                <i
+                  aria-hidden={true}
+                  className="now-ui-icons location_compass-05"
+                ></i>
+                          Map
+                         
                         </NavLink>
                       </NavItem>
                       
-                      <NavItem>
                       
-                        <NavLink
-                          href="/profile"
-                          onClick={"/profile"}
-                        >
+            <UncontrolledDropdown nav>
+              <DropdownToggle
+                caret
+                color="default"
+                href="#pablo"
+                nav
+                onClick={e => e.preventDefault()}
+              >
                 <img
                   src="https://react.semantic-ui.com/images/wireframe/square-image.png"
                   class="ui avatar image"
                 />
                 User
-                         
-                        </NavLink>
-                      </NavItem>
-                     
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem header tag="a">
+                  User options
+                          </DropdownItem>
+                <DropdownItem
+                  href="/edituser"
+                  onClick={"Edituser"}
+                >
+                  Edit User
+                          </DropdownItem>
+                <DropdownItem
+                  href=""
+                  onClick={""}
+                >
+                  Favourites
+                          </DropdownItem>
+                
+                <div className="divider"></div>
+                <DropdownItem
+                  href="#pablo"
+                  onClick={e => e.preventDefault()}
+                >
+                  Settings
+                          </DropdownItem>
+                <div className="divider"></div>
+                <DropdownItem
+                  href="#pablo"
+                  onClick={e => e.preventDefault()}
+                >
+                  LogOut
+                          </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>  
+
+
+
+
+
+
 
                       <NavItem>
                       
                       <NavLink
                         href="/cart"
                         onClick={"cart"}
-                      >
+              >
+                <Badge badgeContent={3} {...defaultProps} />
+                <i
+                aria-hidden={true}
+                className="now-ui-icons shopping_bag-16"
+              ></i>
                         Cart
-                        <i
-                          aria-hidden={true}
-                          className="now-ui-icons shopping_bag-16"
-                        ></i>
+                        
                       </NavLink>
                     </NavItem>
                    
@@ -165,48 +215,44 @@ function MyNavbar() {
                           nav
                           onClick={e => e.preventDefault()}
                         >
-                          Options
-                          <i
-                            aria-hidden={true}
-                            className="now-ui-icons ui-1_settings-gear-63"
-                          ></i>
+                <i
+                  aria-hidden={true}
+                  className="now-ui-icons shopping_shop"
+                ></i>
+                          Shop
+                          
                         </DropdownToggle>
                         <DropdownMenu right>
                           <DropdownItem header tag="a">
-                            More options Here
+                            Shop options
                           </DropdownItem>
                           <DropdownItem
-                            href="/shopsetup"
-                            onClick={"shopsetup"}
+                            href="/shopprofile"
+                            onClick={"shopprofile"}
                           >
-                            Your Shop
+                            Shop
                           </DropdownItem>
                           <DropdownItem
                             href=""
                             onClick={""}
                           >
-                            History
+                            Panel
                           </DropdownItem>
                           <DropdownItem
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                  href="/order"
+                  onClick={"order"}
                           >
-                            Address
+                            Orders
                           </DropdownItem>
                           <div className="divider"></div>
                           <DropdownItem
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                  href="/shopsetup"
+                  onClick={"shopsetup"}
                           >
                             Settings
                           </DropdownItem>
                           <div className="divider"></div>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            LogOut
-                          </DropdownItem>
+                          
                         </DropdownMenu>
                       </UncontrolledDropdown>
                     </Nav>

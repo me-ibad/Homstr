@@ -2,7 +2,7 @@ import React from "react";
 import Card1 from "components/Card/scard.js";
 import Card2 from "components/Card/pcard.js";
 
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
+import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/TransparentFooter.js";
 // reactstrap components
@@ -36,59 +36,120 @@ function LandingPage() {
   });
   return (
     <>
-  <ExamplesNavbar />
+  <IndexNavbar />
 <LandingPageHeader />
-      <div className="container">
+      
         
-        {/* <div className="section section-about-us">
           <Container>
-           
-          </Container>
-        </div> */}
-        <div className="section section-team text-center">
-          <Container>
-            <h2 className="title">Our Feature Shops</h2>
+            {/* <h2 className="title">Our Feature Shops</h2> */}
             <div className="team">
-              <br></br>
-              <Row>
-               
-                <Col lg="4" md="4" sm="6" xm="6" >
-                <Card1/>
-                </Col>
-             
-                <Col lg="4" md="4" sm="6" xm="6">
-                
-                <Card1/>
 
+             <Row>
+<Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
 
+                <div class="card2">
+                  <div class="card_image">
 
-                </Col>
+                    {/* <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by studiogstock - www.freepik.com</a> */}
 
+                    <img src="https://image.freepik.com/free-vector/shopping-basket-bag-with-products_24877-56662.jpg" />
+                  </div>
+                  <div class="card_title title-white">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+</Col>
+            <Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
 
-                <Col lg="4" md="4" sm="6" xm="6">
-                <Card1/>
-                </Col>
-              </Row>
+                <div class="card2">
+                  <div class="card_image">
+                    <img src="https://image.freepik.com/free-vector/medicine-elements-background_23-2147772710.jpg" />
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            <Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
+
+                <div class="card2">
+                  <div class="card_image">
+                    <img src="https://image.freepik.com/free-vector/fast-food-advertising-composition_1284-17372.jpg" />
+                  </div>
+                  <div class="card_title title-white">
+
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
+
+                <div class="card2">
+                  <div class="card_image">
+                    <img src="https://image.freepik.com/free-vector/network-gadget-set_1284-10695.jpg" />
+                   
+                  </div>
+                  <div class="card_title title-white">
+
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
+
+                <div class="card2">
+                  <div class="card_image">
+                    <img src="https://image.freepik.com/free-vector/summer-look-flatlay-trendy-summer-outfit-hand-drawn-illustration-all-elements-are-isolated-blue-background-denim-shorts-teenage-crop-top-sandals-lemons-mesh_196895-208.jpg" />
+                  </div>
+                  <div class="card_title title-white">
+
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col lg="2" md="2" sm="4" xm="1">
+              <div class="cards-list">
+
+                <div class="card2">
+                  <div class="card_image">
+                    <img src="https://image.freepik.com/free-vector/cosmetic-elements-collection_1215-602.jpg" />
+                  </div>
+                  <div class="card_title title-white">
+
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+             </Row>
 
 
               <hr class="my-4"/>
-              <h2 className="title">Our Feature Products</h2>
+          <h2 className="title">Groceries</h2>
             
 <Row>
 
-                <Col lg="3" md="3" sm="6" xm="6">
+                <Col lg="3" md="6" sm="6" xm="6">
                 <Card2/>
                 </Col>
              
-                <Col lg="3" md="3" sm="6" xm="6">
+                <Col lg="3" md="6" sm="6" xm="6">
                 
                 <Card2/>
                 </Col>
 
-                <Col lg="3" md="3" sm="6" xm="6">
+                <Col lg="3" md="6" sm="6" xm="6">
                 <Card2/>
                 </Col>
-                <Col lg="3" md="3" sm="6" xm="6">
+                <Col lg="3" md="6" sm="6" xm="6">
                 <Card2/>
                 </Col>
 
@@ -99,7 +160,7 @@ function LandingPage() {
 
             </div>
           </Container>
-        </div>
+       
         {/* <div className="section section-contact-us text-center">
           <Container>
             <h2 className="title">Want to work with us?</h2>
@@ -170,7 +231,7 @@ function LandingPage() {
 
 
         
-      </div>
+    
       
     </>
   );

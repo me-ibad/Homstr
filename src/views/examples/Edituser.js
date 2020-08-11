@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import ColorNav from "components/Navbars/ColorNav.js";
+import axios from "axios";
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Button,
     Label,
@@ -14,8 +18,150 @@ import {
     Row,
     Col
 } from "reactstrap";
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+    },
+    input: {
+        display: 'none',
+    },
+
+}));
+
+
+
+var myModule = require("views/database");
 function Edituser() {
+
+
+    useEffect(() => {
+        showuser();
+    });
+
+
+
+
+    const [fname, setfname] = useState("");
+    const [lname, setlname] = useState("");
+    const [email, setemail] = useState("");
+    const [phno, setphno] = useState("");
+    const [address, setaddress] = useState("");
+    const [city, setcity] = useState("");
+    const [country, setcountry] = useState("");
+    const [userimg, setuserimg] = useState("");
+
+
+    const [show, setshow] = useState("");
     const [modal1, setModal1] = React.useState(false);
+    const classes = useStyles();
+
+
+
+    const showuser = async () => {
+        const response = await fetch(myModule.servername + "/api/users/showuser", {
+            method: "post",
+            headers: {
+                "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+            },
+            body: `id=${localStorage.getItem('tokenhomstr')}`,
+        });
+        var swt = await response.json();
+        console.log('111111111111111111111111111111111111111111111111111111111111111111');
+        console.log(swt.lname);
+        setfname(swt.fname);
+        setlname(swt.lname);
+        setemail(swt.email);
+        setphno(swt.phno);
+        setaddress(swt.address);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var myModule = require("views/database");
+    const usersubmit = async () => {
+        const data = new FormData();
+
+        data.append("userimg", userimg);
+        data.append('fname', fname);
+        data.append('lname', lname);
+        data.append('email', email);
+        data.append('phno', phno);
+        data.append('address', address);
+        data.append('city', city);
+        data.append('country', country);
+        data.append('tokenhomstr', localStorage.getItem('tokenhomstr'));
+        
+        console.log(country);
+
+        //  let json=JSON.stringify(tags);
+        ///  let post_data={json_data:json}
+
+
+
+        axios
+
+            .post(myModule.servername + "/api/users/edituser", data, {
+
+                // receive two    parameter endpoint url ,form data
+            })
+    }
+
+    var openFile = function (event) {
+        alert('afaf');
+        var input = event.target;
+
+        var reader = new FileReader();
+        reader.onloadstart = function () {
+            reader.abort();
+        };
+
+        reader.onloadend = function () {
+            console.log(reader.error.message);
+        };
+
+        reader.readAsArrayBuffer(input.files[0]);
+    };
+
+    const onChangeHandler = (e) => {
+        setuserimg(e.target.files[0]);
+
+        
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        }
+        if (e.target.files[0]) {
+            reader.readAsDataURL(e.target.files[0]);
+        }
+
+
+    };
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <Modal isOpen={modal1} toggle={() => setModal1(false)}>
@@ -39,6 +185,7 @@ function Edituser() {
                                     Current Password</Label>
                                 <FormGroup>
                                     <Input
+                                        id="bp-login-widget-form"
                                         defaultValue=""
                                         placeholder=""
                                         type="text"
@@ -101,15 +248,11 @@ function Edituser() {
 
 
 
-            <ColorNav />
+            {/* <ColorNav /> */}
             <Container>
                 <div className="  text-center" >
-                    <h2 className="title">Setup Your Shop</h2>
-                    <img
-                        alt="..."
-                        className="rounded img-raised widthig"
-                        src={require("assets/img/no.jpg")}
-                    ></img>
+                    <h2 className="title"></h2>
+                  
 
                 </div>
 
@@ -117,10 +260,22 @@ function Edituser() {
 
 
                 <Row>
-                    <Col md="4" lg="4" sm="4"></Col>
-                    < Col md="6" lg="4" sm="6" >
-                        <label for="img">Select image:</label>
-                        <Input type="file" accept="image/*" />
+                    <Col md="4" lg="4" sm="4" xm="4"></Col>
+                    < Col md="8" lg="8" sm="8" m="8">
+                        <div class="avtcontainer">
+                            <img src={require("assets/img/avatr.jpg")} alt="Avatar" class="avtimage" id='output' />
+                            <div class="avtmiddle">
+                                <div className={classes.root}>
+                                  
+                                    <input accept="image/*" className={classes.input} id="icon-button-file" type="file" onChange={onChangeHandler} />
+                                    <label htmlFor="icon-button-file">
+                                        <IconButton color="primary" aria-label="upload picture" component="span" >
+                                            <PhotoCamera fontSize="large"/>
+                                        </IconButton>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </ Col>
 
                     <Col md="2"> </Col>
@@ -136,9 +291,10 @@ function Edituser() {
                             <Label for="ShopName">First Name<span className="sred">*</span></Label>
                             <FormGroup>
                                 <Input
-                                    defaultValue=""
+                                    defaultValue={fname}
                                     placeholder=""
                                     type="text"
+                                    onChange={(e) => setfname(e.target.value)}
                                 ></Input>
                             </FormGroup>
                         </Col>
@@ -148,9 +304,10 @@ function Edituser() {
                             <Label for="ShopName">Last Name<span className="sred">*</span></Label>
                             <FormGroup>
                                 <Input
-                                    defaultValue=""
+                                    defaultValue={lname}
                                     placeholder=""
                                     type="text"
+                                    onChange={(e) => setlname(e.target.value)}
                                 ></Input>
                             </FormGroup>
                         </Col>
@@ -167,9 +324,11 @@ function Edituser() {
                             <Label for="ShopName">Email<span className="sred"></span></Label>
                             <FormGroup>
                                 <Input
-                                    defaultValue=""
+                                    defaultValue={email}
                                     placeholder=""
                                     type="email"
+                                    onChange={(e) => setemail(e.target.value)}
+                                   
                                 ></Input>
                             </FormGroup>
                         </Col>
@@ -179,9 +338,10 @@ function Edituser() {
                             <Label for="ShopName">Phone Number<span className="sred"></span></Label>
                             <FormGroup>
                                 <Input
-                                    defaultValue=""
+                                    defaultValue={phno}
                                     placeholder=""
                                     type="text"
+                                    onChange={(e) => setphno(e.target.value)}
                                 ></Input>
                             </FormGroup>
                         </Col>
@@ -190,29 +350,83 @@ function Edituser() {
                     </Row>
 
                 </div>
+                <div className="sett-1">
+
+                    <Row>
+                        <Col lg="4" md="4" sm="6">
+                            <Label for="ShopName">Address<span className="sred">*</span></Label>
+                            <FormGroup>
+                                <Input
+                                    defaultValue={address}
+                                    placeholder=""
+                                    type="text"
+                                    onChange={(e) => setaddress(e.target.value)}
+                                ></Input>
+                            </FormGroup>
+                        </Col>
+                        <Col lg="1" md="1" sm="1">
+                        </Col>
+                        <Col lg="3" md="4" sm="6">
+
+                            <FormGroup>
+                                <Label for="ShopName">City<span className="sred">*</span></Label>
+                                <br />
+                                <select class="ui dropdown dropstyl" onChange={(e) => setcity(e.target.value)}>
+                                    <option value="select">--select--</option> 
+
+                                    <option value="Islamabad">Islamabad</option>
+                            
+                                    <option value="Lahore">Lahore</option>
+                              
+                                    <option value="Karachi">Karachi</option>
+                                 
+                                   
+
+                                </select>
+                            </FormGroup>
+                        </Col>
+
+                        <Col lg="1" md="1" sm="1">
+                        </Col>
+                        <Col lg="3" md="4" sm="6">
+
+                            <FormGroup>
+                                <Label for="ShopName">Country<span className="sred">*</span></Label>
+                                <br />
+                                <select class="ui dropdown dropstyl " onChange={(e) => setcountry(e.target.value)}>
+                                    <option value="select">--select--</option> 
+                                    <option value="Pakistan">Pakistan</option>    
+                                    <option value="india">india</option>                             
+                                </select>
+                            </FormGroup>
+
+                        </Col>
+
+                    </Row>
+
+
+
+
+                </div>
                 <Button color="warning"
                     onClick={() => setModal1(true)}
 
-                >reset password</Button>
+                >Change password</Button>
                 < div className="sett-1" >
                     <Row>
 
-                        <Col lg="2" md="2" sm="2">
+                        <Col lg="2" md="2" sm="2" xm="1">
 
                         </Col>
-                        <Col lg="6" md="2" sm="2">
-                            <Button color="danger"
-                                href="/shopsetup"
-                                onClick={"shopsetup"}
-                            >Back</Button>
+                        <Col lg="2" md="2" sm="2" xm="2">
+                            
                         </Col>
 
-
-
-                        <Col lg="2" md="2" sm="2">
+                        <Col lg="4" md="2" sm="2" xm="2">
+                         </Col>
+                        <Col lg="2" md="2" sm="2" xm="2">
                             <Button color="info"
-                                href="/profile"
-                                onClick={"profile"}
+                                onClick={usersubmit}
 
                             >Continue</Button>
                         </Col>
