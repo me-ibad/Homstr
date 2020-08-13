@@ -37,6 +37,9 @@ import ShopProfile from "views/examples/ShopProfile.js";
 import Product from "views/examples/Product.js";
 import Cart from "views/examples/Cart.js";
 import Contact from "views/examples/Contact.js";
+import ShopPanel from "views/examples/ShopPanel.js";
+
+
 import DefaultFooter from "components/Footers/TransparentFooter.js";
 function Index() {
   React.useEffect(() => {
@@ -68,6 +71,8 @@ function Index() {
 <Route path="/bank" component={Bank}   />
         <Route path="/productdetails" component={Productdetails} />
         <Route path="/edituser" component={Edituser} />
+        <Route path="/ShopPanel" component={ShopPanel} />
+
         <Route path="/test" component={Test} />
 </Switch>
  <DefaultFooter /> 

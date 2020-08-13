@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+
+
 import {
-    Button,
+    
     Input,
     InputGroupAddon,
     InputGroupText,
     InputGroup,
     Container,
+  Modal,
+  ModalBody,
     Row,
     Col,
     Pagination,
     PaginationItem,
     PaginationLink
   } from "reactstrap";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 function pcard() {
-    return (
+
+  return (
+    <>
+    
         <div>
-            
+       
 
         <section class="cards">
           <article class=" card--1">
@@ -53,10 +63,16 @@ function pcard() {
               
               <span class="card__by">by <a href="/profile"
                 onClick={"/profile"} class="card__author" title="author">Celeste Mils</a></span>
-              <button class="ui vertical animated button">
+                <div className="pcard_styl-btn">
+                <a href="/productdetails"><EditIcon /></a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="" ><DeleteIcon /></a>
+              
+              {/* <button class="ui vertical animated button">
                 <div class="hidden content">Shop</div>
                 <div class="visible content"><i aria-hidden="true" class="shop icon"></i></div>
-              </button>
+              </button> */}
+              </div>
               <br>
               </br>
               <p className="chili-pepper-text mb-0"><a class="ui label">$100000.00</a></p>
@@ -68,6 +84,7 @@ function pcard() {
 
         </section>
         </div>
+        </>
     )
 }
 
