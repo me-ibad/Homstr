@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState, useEffect }  from "react";
 import Card1 from "components/Card/scard.js";
 import Card2 from "components/Card/pcard.js";
 
@@ -34,10 +34,68 @@ function LandingPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
+
+
+  const [alldata, setalldata] = React.useState([]);
+  const [loading, setLoading] = useState(false);
+
+  
+
+  const [searchcategory, setsearchcategory] = useState("");
+  const [searchtext, setsearchtext] = useState("");
+ 
+
+
+
+  useEffect(() => {
+ 
+ 
+    getallproducts();
+    
+  /////alert('dddddddddd');
+  
+  
+  }, [searchtext]);
+
+
+
+  var myModule = require('views/database');
+
+  const getallproducts = async()  => {
+    var parts = window.location.pathname.split('/');
+        var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+    var myModule = require('views/database');
+  const response= await fetch(myModule.servername+"/api/users/getproducts", {
+    method: "post",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+    },
+    body: `categoty=${searchcategory}&searchtext=${searchtext}`,
+  });
+    const json=await response.json();
+    
+    // return json;
+    setalldata(json);
+   
+  
+    }
+
+
+
+
+
+
+
+
+
   return (
     <>
   <IndexNavbar />
-<LandingPageHeader />
+<LandingPageHeader 
+setsearchcategory={setsearchcategory}
+setsearchtext={setsearchtext}
+
+/>
       
         
           <Container>
@@ -135,25 +193,22 @@ function LandingPage() {
               <hr class="my-4"/>
           <h2 className="title">Groceries</h2>
             
-<Row>
+{/* <Row> */}
 
-                <Col lg="3" md="6" sm="6" xm="6">
-                <Card2/>
-                </Col>
+                {/* <Col lg="3" md="6" sm="6" xm="6"> */}
+                {/* <Card2/> */}
+                <Card2
+              post={alldata}
+              loading={loading}
              
-                <Col lg="3" md="6" sm="6" xm="6">
-                
-                <Card2/>
-                </Col>
+            />
 
-                <Col lg="3" md="6" sm="6" xm="6">
-                <Card2/>
-                </Col>
-                <Col lg="3" md="6" sm="6" xm="6">
-                <Card2/>
-                </Col>
 
-</Row>
+                {/* </Col> */}
+             
+              
+
+{/* </Row> */}
 
 
 

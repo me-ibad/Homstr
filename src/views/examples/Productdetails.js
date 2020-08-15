@@ -63,15 +63,23 @@ function Productdetails() {
     
 
         const data = new FormData();
-
-        data.append("file", img);
+        for(var x = 0; x<img.length; x++) {
+            data.append('file', img[x])
+        }
+    
+    
+        
         data.append('pname', pname);
         data.append('price', price);
         data.append('category', category);
         data.append('other', other);
         data.append('discount', discount);
         data.append('description', description);
+
+        data.append('uploderid', JSON.parse(localStorage.getItem("tokenhomstr"))._id);
         
+
+
         //  let json=JSON.stringify(tags);
         ///  let post_data={json_data:json}
     
@@ -91,19 +99,19 @@ setpname(e.target.value);
 
     const onChangeHandler = (e) => {
         
-            setimg(e.target.files[0]);
+            setimg(e.target.files);
 
-        var reader = new FileReader();
-        reader.onload = function () {
-            var output = document.getElementById('output');
-            output.src = reader.result;
+    //     var reader = new FileReader();
+    //     reader.onload = function () {
+    //         var output = document.getElementById('output');
+    //         output.src = reader.result;
             
 
-    }
+    // }
         
-        if (e.target.files[0]) {
-            reader.readAsDataURL(e.target.files[0]);  
-    }
+    //     if (e.target.files[0]) {
+    //         reader.readAsDataURL(e.target.files[0]);  
+    // }
        
     };
 
@@ -149,7 +157,7 @@ setpname(e.target.value);
                                 <div class="avtmiddle">
                                     <div className={classes.root}>
 
-                                        <input accept="image/*" className={classes.input} id="icon-button-file" name="one" type="file" onChange={onChangeHandler} />
+                                        <input accept="image/*" className={classes.input} id="icon-button-file" name="one" type="file" onChange={onChangeHandler}  multiple/>
                                         <label htmlFor="icon-button-file">
                                             <IconButton color="primary" aria-label="upload picture" component="span">
                                                 <PhotoCamera fontSize="large" />
@@ -159,7 +167,7 @@ setpname(e.target.value);
                                 </div>
                             </div> 
                     </ Col>
-                        < Col md="5" lg="2" sm="6" >
+                        {/* < Col md="5" lg="2" sm="6" >
                             <div class="avtcontainer">
                                 <img src={require("assets/img/no.jpg")} alt="Avatar" class="avtimage" id='output2' />
                                 <div class="avtmiddle">
@@ -174,7 +182,7 @@ setpname(e.target.value);
                                     </div>
                                 </div>
                             </div> 
-                        </ Col> 
+                        </ Col>  */}
                         
                     <Col md="2"> </Col>
                 </Row>

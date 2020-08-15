@@ -154,7 +154,8 @@ if(swt=="yes"){
     console.log(swt);
     if (swt!= null) {
       console.log(swt);
-      localStorage.setItem("tokenhomstr", swt._id);
+      localStorage.setItem("tokenhomstr", JSON.stringify(swt));
+   
    window.location = "/edituser"
     }
     else {

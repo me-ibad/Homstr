@@ -16,8 +16,8 @@ const bodyParser = require("body-parser");
 const ObjectId = require("mongodb").ObjectID;
 
 var path = require('path');
-
-
+var getproducts = require("./routes/getproduct");
+var addtocart = require("./routes/addtocart");
 var url = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false";
 const router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
@@ -37,9 +37,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 ///var url = "mongodb+srv://saadi:saadi@cluster0-znryv.mongodb.net/audiomac";
 
 
+getproducts(router);
 
-
-
+addtocart(router);
 
 
 app.get('/', (req, res) => {
@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 
 
 
-
+var arrayfiles=[]
 
 
 
@@ -65,7 +65,8 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file={}, cb) {
     cb(null, ( printname=myfilename = Date.now() + "-" + file.originalname));
-      purl = printname
+      purl = printname;
+      arrayfiles.push(printname);
   },
 });
 
@@ -99,10 +100,12 @@ router.post('/users/files', upload.array('file'), (req, res) => {
     }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("HomstrDB");
+
+        console.log(arrayfiles)
             var myobj = {
                 pname: req.body.pname, price: req.body.price, category: req.body.category, 
                 other: req.body.other, discount: req.body.discount, description: req.body.description
-            ,productimage:purl};
+            ,productimage:arrayfiles,uploderid:ObjectId(req.body.uploderid)};
         dbo.collection("productsproducts").insertOne(myobj, function (err, res) {
             if (err) throw err;
             console.log("1 document inserted");

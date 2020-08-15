@@ -12,8 +12,56 @@ import {
     PaginationItem,
     PaginationLink
   } from "reactstrap";
-function pcard() {
+
+function pcard(props) {
+
+
+
+
+
+
+  const cartfun = async(uid,pid)  => {
+
+    var myModule = require('views/database');
+      const response = await fetch(myModule.servername + "/api/users/addtocart", {
+          method: "post",
+          headers: {
+              "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          },
+          body: `uid=${JSON.parse(localStorage.getItem("tokenhomstr"))._id}&pid=${pid}`,
+
+          
+
+      });
+      var swt = await response.json();
+     
+  
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  return (
+    <div>
+  {props.loading ? (
+    <h2>Loading...</h2>
+  )  : (
+    props.post.map((item) => {     
+
     return (
+
+      <Col lg="3" md="6" sm="6" xm="6"> 
         <div>
             
 
@@ -22,7 +70,7 @@ function pcard() {
 
            
             <a href="/product" class="card_link">
-              <img src={require("assets/img/cake.jpeg")} />
+              <img src={require("E:/react projects/Homstr/Back-end/public/"+item.productimage[0])} />
             </a>
             
 <div className="starreview">
@@ -49,17 +97,21 @@ function pcard() {
 
             <div class="card__info">
               
-              <h3 class="card__title">Crisp Spanish</h3>
+    <h3 class="card__title">{item.pname}</h3>
               
               <span class="card__by">by <a href="/profile"
-                onClick={"/profile"} class="card__author" title="author">Celeste Mils</a></span>
-              <button class="ui vertical animated button">
+                onClick={"/profile"} class="card__author" title="author"> {item.uplodername}</a></span>
+            <div className="pcard_styl-btn">
+              
+
+                <button onClick={()=>cartfun(item.uploderid,item._id)}   class="ui vertical animated button">
                 <div class="hidden content">Shop</div>
                 <div class="visible content"><i aria-hidden="true" class="shop icon"></i></div>
               </button>
+            </div>
               <br>
               </br>
-              <p className="chili-pepper-text mb-0"><a class="ui label">$100000.00</a></p>
+    <p className="chili-pepper-text mb-0"><a class="ui label">{item.price}</a></p>
               
              
             </div>
@@ -68,7 +120,13 @@ function pcard() {
 
         </section>
         </div>
+
+        </Col>
+
+
     )
+  }))} </div>)
+
 }
 
 export default pcard

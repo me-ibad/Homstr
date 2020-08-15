@@ -16,7 +16,10 @@ max-height: 200px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
-
+.pcard_styl-btn{
+  float: right;
+  
+}
 .avtmiddle {
   transition: .5s ease;
   opacity: 0;

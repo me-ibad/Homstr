@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState, useEffect }  from "react";
 import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/TransparentFooter.js";
@@ -15,7 +15,58 @@ import {
     Col
   } from "reactstrap";
   import ColorNav from "components/Navbars/ColorNav.js";
+
+ 
+
+
+
+
 function Cart() {
+
+
+
+
+  const [alldata, setalldata] = React.useState([]);
+
+  useEffect(() => {
+ 
+ 
+cartdata();
+    
+  /////alert('dddddddddd');
+  
+  
+  }, []);
+
+
+
+
+  const cartdata = async()  => {
+
+    var myModule = require('views/database');
+  const response= await fetch(myModule.servername+"/api/users/showcart", {
+    method: "post",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+    },
+    body: `id=${JSON.parse(localStorage.getItem("tokenhomstr"))._id}`,
+  });
+    const json=await response.json();
+    
+    // return json;
+    setalldata(json);
+   
+  
+    }
+
+
+
+
+
+
+
+
+
     return (
         <div>
 <ColorNav />
@@ -51,16 +102,18 @@ function Cart() {
                       </tr>
                     </thead>
                     <tbody>
+
+                    {alldata.map((s,i)=> ( <>
                       <tr>
                         <th scope="row" className="border-0">
                           <div className="p-2">
-                            <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt="" width={70} className="img-fluid rounded shadow-sm" />
+                            <img src={require("E:/react projects/Homstr/Back-end/public/"+s.pimage[0])} alt="" width={70} className="img-fluid rounded shadow-sm" />
                             <div className="ml-3 d-inline-block align-middle">
-                              <h5 className="mb-0"> <a href="#" className="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span className="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                    <h5 className="mb-0"> <a href="#" className="text-dark d-inline-block align-middle">{s.productname}</a></h5><span className="text-muted font-weight-normal font-italic d-block">Category: {s.category}</span>
                             </div>
                           </div>
                         </th>
-                        <td className="border-0 align-middle"><strong>79.00</strong></td>
+                    <td className="border-0 align-middle"><strong>{s.price}</strong></td>
                         <td className="border-0 align-middle inputst"><strong >
                         <Input
                         
@@ -75,55 +128,7 @@ function Cart() {
                             </strong></td>
                         <td className="border-0 align-middle"><a href="#" className="text-dark"><i className="fa fa-trash" /></a></td>
                       </tr>
-                      <tr>
-                        <th scope="row">
-                          <div className="p-2">
-                            <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-3_cexmhn.jpg" alt="" width={70} className="img-fluid rounded shadow-sm" />
-                            <div className="ml-3 d-inline-block align-middle">
-                              <h5 className="mb-0"><a href="#" className="text-dark d-inline-block">Lumix camera lense</a></h5><span className="text-muted font-weight-normal font-italic">Category: Electronics</span>
-                            </div>
-                          </div>
-                        </th>
-                        <td className="align-middle"><strong>79.00</strong></td>
-                        <td className="border-0 align-middle inputst"><strong >
-                        <Input
-                        
-                    defaultValue="1"
-                    placeholder="Regular"
-                    type="text"
-                  ></Input>
-                            
-                            
-                            
-                            
-                            </strong></td>
-                        <td className="align-middle"><a href="#" className="text-dark"><i className="fa fa-trash" /></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          <div className="p-2">
-                            <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-2_qxjis2.jpg" alt="" width={70} className="img-fluid rounded shadow-sm" />
-                            <div className="ml-3 d-inline-block align-middle">
-                              <h5 className="mb-0"> <a href="#" className="text-dark d-inline-block">Gray Nike running shoe</a></h5><span className="text-muted font-weight-normal font-italic">Category: Fashion</span>
-                            </div>
-                          </div>
-                        </th><td className="align-middle"><strong>79.00</strong></td>
-                        <td className="border-0 align-middle inputst"><strong >
-                        <Input
-                        
-                    defaultValue="1"
-                    placeholder="Regular"
-                    type="text"
-                  ></Input>
-                            
-                            
-                            
-                            
-                            </strong></td>
-                        <td className="align-middle"><a href="#" className="text-dark"><i className="fa fa-trash" /></a>
-                        </td>
-                      </tr>
+                      </>))}
                     </tbody>
                   </table>
                 </div>

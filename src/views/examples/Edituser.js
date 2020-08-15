@@ -65,7 +65,10 @@ function Edituser() {
             headers: {
                 "content-type": "application/x-www-form-urlencoded; charset=utf-8",
             },
-            body: `id=${localStorage.getItem('tokenhomstr')}`,
+            body: `id=${JSON.parse(localStorage.getItem("tokenhomstr"))._id}`,
+
+            
+
         });
         var swt = await response.json();
         console.log('111111111111111111111111111111111111111111111111111111111111111111');
