@@ -1,4 +1,4 @@
-const express = require("express");
+ const express = require("express");
 const app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
@@ -8,7 +8,7 @@ const cors = require("cors");
 
 //     multer = require('multer'),
 //     multerS3 = require('multer-s3');
-
+const { body, validationResult,check } = require('express-validator');
 
 var multer = require("multer");
 const bodyParser = require("body-parser");
@@ -86,7 +86,7 @@ const upload = multer({ storage });
 // });
 
 /////////////////////////////handle my diles data///////////////////
-router.post('/users/files', upload.array('file'), (req, res) => {
+router.post('/users/files', upload.array('file'),[check('pname')], (req, res) => {
 
     console.log(req.body);
 
@@ -105,8 +105,8 @@ router.post('/users/files', upload.array('file'), (req, res) => {
             var myobj = {
                 pname: req.body.pname, price: req.body.price, category: req.body.category, 
                 other: req.body.other, discount: req.body.discount, description: req.body.description
-            ,productimage:arrayfiles,uploderid:ObjectId(req.body.uploderid)};
-        dbo.collection("productsproducts").insertOne(myobj, function (err, res) {
+            ,productimage:purl};
+        dbo.collection("products").insertOne(myobj, function (err, res) {
             if (err) throw err;
             console.log("1 document inserted");
             // res.json('submitted');
@@ -284,13 +284,6 @@ router.post('/users/signingoogle', (req, res) => {
 
 
 });
-
-
-
-
-
-
-
 
 
 

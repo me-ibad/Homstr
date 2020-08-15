@@ -5,6 +5,10 @@ import axios from "axios";
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { makeStyles } from '@material-ui/core/styles';
+
+import "@pathofdev/react-tag-input/build/index.css";
+import ReactTagInput from "@pathofdev/react-tag-input";
+
 import {
     Button,
     Label,
@@ -31,10 +35,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Productdetails() {
+    const [tags, setTags] = React.useState([]);
+    const [tags1, setTags1] = React.useState([]);
+
     const [pnameErr, setpnameErr] = useState("");
     const [pname, setpname] = useState("");
 
     const [price, setprice] = useState("");
+    const [priceErr, setpriceErr] = useState("");
+
     const [other, setother] = useState("");
     const [category, setcategory] = useState("");
     const [discount, setdiscount] = useState("");
@@ -61,6 +70,18 @@ function Productdetails() {
     // }
     const pruductsubmit = async () => {
     
+
+if(pname==""){
+    setpnameErr("Enter name");
+
+}
+
+ if(price==""){
+    setpriceErr("Enter Correct Price");
+}
+else{
+
+    alert('noo');
 
         const data = new FormData();
         for(var x = 0; x<img.length; x++) {
@@ -89,6 +110,7 @@ function Productdetails() {
                     
                     // receive two    parameter endpoint url ,form data
                 })
+            }
     
     }
 function handlername(e){
@@ -192,20 +214,20 @@ setpname(e.target.value);
                         <Label for="ShopName">Name<span className="sred">*</span></Label>
                         <FormGroup>
                             <Input
-                                    inputProps={{
-                                        type: "email",
-                                        onChange: (e) => setpname(e.target.value),
-                                    }}
+                                
+                                    onChange={(e) => setpname(e.target.value)}
+                                        id="pname"
+                                   
                                     ref={register({ required: true })}
                                 defaultValue=""
                                 placeholder=""
-                                onChange={handlername}
+                             
                                 type="text"
                             ></Input>
-                            
+                                <span class="errorstyl">{pnameErr}<i aria-hidden="true" class="icon"></i></span>
                                 
                         </FormGroup>
-                            
+                           
                     </Col>
                     
                        
@@ -223,6 +245,7 @@ setpname(e.target.value);
                                 type="number"
                                     min="0"
                             ></Input>
+                                <span class="errorstyl">{priceErr}<i aria-hidden="true" class="icon"></i></span>
                         </FormGroup>
                     </Col>
                     <Col lg="1" md="1" sm="1">
@@ -242,7 +265,7 @@ setpname(e.target.value);
                    
                 </Row>
 
-                <div className="sett-1">
+                <div className="">
 
                     <Row>
                         <Col lg="3" md="4" sm="6">
@@ -281,33 +304,21 @@ setpname(e.target.value);
                     <Row>
                         <Col lg="3" md="4" sm="6">
                             <Label for="ShopName">Colors</Label>
-                            <FormGroup>
-                                <Input
-                                        inputProps={{
-                                            type: "email",
-                                            onChange: (e) => setcolor(e.target.value),
-                                        }}
-                                    defaultValue=""
-                                        placeholder="red,green"
-                                    type="text"
-                                ></Input>
-                            </FormGroup>
+                                <ReactTagInput
+                                    tags={tags}
+                                    onChange={
+                                        (newTags) => setTags(newTags)
+                                    } />
                         </Col>
                         <Col lg="1" md="1" sm="1">
                         </Col>
                         <Col lg="3" md="4" sm="6">
                             <Label for="ShopName">Size</Label>
-                            <FormGroup>
-                                <Input
-                                        inputProps={{
-                                            type: "email",
-                                            onChange: (e) => setsize(e.target.value),
-                                        }}
-                                    defaultValue=""
-                                    placeholder="lg,md,sm"
-                                    type="text"
-                                ></Input>
-                            </FormGroup>
+                                <ReactTagInput
+                                    tags={tags1}
+                                    onChange={
+                                        (newTags) => setTags1(newTags)
+                                    } />
                         </Col>
 
 
