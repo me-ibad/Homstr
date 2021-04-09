@@ -69,8 +69,8 @@ function pcard(props) {
           <article class=" card--1">
 
            
-            <a href="/product" class="card_link">
-              <img src={require("E:/react projects/Homstr/Back-end/public/"+item.productimage[0])} />
+            <a href="/product" >
+              <img class="card_link" src={require("E:/react projects/Homstr/Back-end/public/"+item.productimage[0])} />
             </a>
             
 <div className="starreview">
